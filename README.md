@@ -1,3 +1,5 @@
+// PIM
+// Usuarios e Senhas Cadastradas: (funcionario1, senha1), (funcionario2, senha2), (funcionario3, senha3)
 #include <stdio.h>
 #include <string.h>
 
@@ -12,7 +14,7 @@ typedef struct {
 
 typedef struct {
     char usuario[30];
-    char senha[20]; // Corrigido para um tamanho razoável
+    char senha[20]; 
 } Funcionario;
 
 void exibirProdutos(Produto produtos[], int numProdutos) {
@@ -136,11 +138,11 @@ int autenticarFuncionario(Funcionario funcionarios[], int numFuncionarios) {
 
     for (int i = 0; i < numFuncionarios; i++) {
         if (strcmp(funcionarios[i].usuario, usuario) == 0 && strcmp(funcionarios[i].senha, senha) == 0) {
-            return 1; // Autenticado
+            return 1; 
         }
     }
     printf("Usuario ou senha incorretos.\n");
-    return 0; // Não autenticado
+    return 0; 
 }
 
 void adicionarFuncionario(Funcionario funcionarios[], int *numFuncionarios) {
@@ -269,13 +271,13 @@ int main() {
         {"funcionario3", "senha3"}
     };
 
-    int numProdutos = 100; // Inicializado com 100 produtos
-    int numFuncionarios = 3; // Inicialmente, três funcionários
+    int numProdutos = 100; 
+    int numFuncionarios = 3; 
     int continuar = 1;
 
-    // Autenticação do funcionário
+    
     if (!autenticarFuncionario(funcionarios, numFuncionarios)) {
-        return 0; // Sai se não autenticado
+        return 0; 
     }
 
     while (continuar) {
